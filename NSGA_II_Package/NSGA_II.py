@@ -53,7 +53,7 @@ class NSGA_II(object):
         return Population 
     
     def Evolve_A_Generation(self,Generation,Population,population_size):
-        print  "*******************Iteracao(%d)*******************" % Generation
+        print("*******************Iteracao(%d)*******************" % Generation)
              
         Ret_P = []
         
@@ -62,7 +62,7 @@ class NSGA_II(object):
         del Population[:]#删除种群
         
         #添加分层后的种群到新的种群中
-        for front in fronts.values():
+        for front in list(fronts.values()):
 
             if len(front) == 0:
                 break

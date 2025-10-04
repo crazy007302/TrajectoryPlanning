@@ -50,20 +50,20 @@ class BSplineCurve():
         self.__m_n = len(TList)-1
         self.__m_integration_Region_List = np.linspace(0, 1, 50) #数值积分小区间
         
-        logging.info(u"=============================================")
-        logging.info(u">>now start cal and para will following that")
-        logging.info(u">>-----------TList's each var--------------" )
+        logging.info("=============================================")
+        logging.info(">>now start cal and para will following that")
+        logging.info(">>-----------TList's each var--------------" )
         for index,e in enumerate(TList):
-            logging.info(u">>Index %d's value:%f" ,index, e)
-        logging.info(u">>------------------------------------------")
-        logging.info(u">>-----------PList's each var--------------" )
+            logging.info(">>Index %d's value:%f" ,index, e)
+        logging.info(">>------------------------------------------")
+        logging.info(">>-----------PList's each var--------------" )
         for index,e in enumerate(PList):
-            logging.info(u">>Index %d's value:%f" ,index, e)
-        logging.info(u">>------------------------------------------")
-        logging.info(u">>Data's number is %d ",self.__m_n)
-        logging.info(u">>K is %d ",self.__mK)
-        logging.info(u">>T_all is %f ",self.__mT_all)
-        logging.info(u"=============================================\n")
+            logging.info(">>Index %d's value:%f" ,index, e)
+        logging.info(">>------------------------------------------")
+        logging.info(">>Data's number is %d ",self.__m_n)
+        logging.info(">>K is %d ",self.__mK)
+        logging.info(">>T_all is %f ",self.__mT_all)
+        logging.info("=============================================\n")
         
         #################处理坐标点矩阵################
         #self.__mP_OrgArray = PList
@@ -94,7 +94,7 @@ class BSplineCurve():
         Ret_U_List_Index = 0 
         Sum_DisT = 0        #时间间隔的总和
         All_T = TList[len(TList)-1] - TList[0]
-        logging.info(u">>Cal_u-1 Step Done. All_T's value :%f" , All_T)
+        logging.info(">>Cal_u-1 Step Done. All_T's value :%f" , All_T)
         
         #计算 各个时间的时间间隔以及时间间隔的总和 ，为归一化做准备
         for T in TList:
@@ -105,7 +105,7 @@ class BSplineCurve():
         for DisT in DisTList:
             Sum_DisT = Sum_DisT + DisT
             
-        logging.info(u">>Cal_u-2 Step Done. SumTList's value :%d" , Sum_DisT)
+        logging.info(">>Cal_u-2 Step Done. SumTList's value :%d" , Sum_DisT)
         
         #初始化u(0) 至 u(k)
         while Ret_U_List_Index <= K:
@@ -123,12 +123,12 @@ class BSplineCurve():
             Ret_UList.append(1) 
             Ret_U_List_Index += 1
             
-        logging.info(u">>Cal_u-3 Step Done. Ret_UList's len :%d" , len(Ret_UList))
+        logging.info(">>Cal_u-3 Step Done. Ret_UList's len :%d" , len(Ret_UList))
         
-        logging.info(u">>-----------Ret_UList's each var----------" )
+        logging.info(">>-----------Ret_UList's each var----------" )
         for index,e in enumerate(Ret_UList):
-                logging.info(u">>Index %d's value:%f" ,index, e)
-        logging.info(u">>-----------------------------------------" )
+                logging.info(">>Index %d's value:%f" ,index, e)
+        logging.info(">>-----------------------------------------" )
         
         return Ret_UList
     
@@ -355,12 +355,12 @@ class BSplineCurve():
         self.__GetAControl();
         self.__GetJControl();
         
-        logging.info(u">>Cal ControlPoint Done.")   
-        logging.info(u">>----------Control_D_Array's each var-----------" )
+        logging.info(">>Cal ControlPoint Done.")   
+        logging.info(">>----------Control_D_Array's each var-----------" )
         for index,e in enumerate( self.__mControl_D_Array):
-            logging.info(u">>Index %d's value:%f" ,index, e)
+            logging.info(">>Index %d's value:%f" ,index, e)
 
-        logging.info(u">>----------------------------------------------" )
+        logging.info(">>----------------------------------------------" )
         
         pass
     
@@ -372,7 +372,7 @@ class BSplineCurve():
     def __SearchIndex(self,u):
         Left = self.__mK
         Right = self.__m_n+self.__mK
-        Mid = (Left + Right)/2
+        Mid = (Left + Right)//2
  
         #print u, self.__mU_List[self.__m_n+self.__mK] 
        
@@ -384,7 +384,7 @@ class BSplineCurve():
                 Right = Mid 
             else :
                 Left = Mid
-            Mid = (Left + Right)/2 
+            Mid = (Left + Right)//2
            
         return Mid
 
@@ -516,7 +516,7 @@ class BSplineCurve():
             elif abs(e) > MaxD:
                 MaxD = abs(e)     
                 
-        logging.info(u">>MAX_Control_D_%s is %f ",V_A_J,MaxD)  
+        logging.info(">>MAX_Control_D_%s is %f ",V_A_J,MaxD)  
         
 #         if  V_A_J == "A" or  V_A_J == "V"   :    
 #             return MaxD-20
@@ -617,10 +617,10 @@ class BSplineCurve():
     '''  
     def CalBSplineCurve(self):
         
-        logging.info(u"=============================================")
+        logging.info("=============================================")
         self.__mU_List = self.__Convert_T_To_U(self.__mT_List,self.__mK)
         self.__CreateC_N()
-        logging.info(u"=============================================\n")
+        logging.info("=============================================\n")
         
         pass
         
@@ -680,8 +680,8 @@ if __name__ == '__main__':
     
     mBSplineCurve1 = BSplineCurve(TList,7,List)
     mBSplineCurve1.CalBSplineCurve() 
-    print mBSplineCurve1.GetE_J_Level("J")
-    print mBSplineCurve1.GetE_J_Level("E")
+    print(mBSplineCurve1.GetE_J_Level("J"))
+    print(mBSplineCurve1.GetE_J_Level("E"))
     
 
     NewList=[]

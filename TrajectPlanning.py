@@ -76,7 +76,7 @@ class TrajectPlanning(object):
 
         self.Plt.append( self.DrawFig(P_Ret,self.RetPoint[0],"%d_BSplineCurve" % 0) )
         
-        print "时间:"+str(self.TargetPoint[0])+", 平滑:"+str(self.TargetPoint[1])+", 能量:"+str(self.TargetPoint[2])+"\n"
+        print("时间:"+str(self.TargetPoint[0])+", 平滑:"+str(self.TargetPoint[1])+", 能量:"+str(self.TargetPoint[2])+"\n")
     def GetOtherRet(self):
         '''
         function:采用R支配求解剩余的轨迹
@@ -101,7 +101,7 @@ class TrajectPlanning(object):
                     
 
             self.Plt.append( self.DrawFig(P_Ret,self.RetPoint[i],"%d_BSplineCurve" % i ))       
-            print "时间:"+str(self.RetPoint[i].objectives[0])+", 平滑:"+str(self.RetPoint[i].objectives[1])+", 能量:"+str(self.RetPoint[i].objectives[2])+"\n"
+            print("时间:"+str(self.RetPoint[i].objectives[0])+", 平滑:"+str(self.RetPoint[i].objectives[1])+", 能量:"+str(self.RetPoint[i].objectives[2])+"\n")
     
     
             

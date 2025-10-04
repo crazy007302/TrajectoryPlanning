@@ -32,6 +32,6 @@ Config.ConfigMonitorLog()
 
 if __name__ == '__main__':
     mConfig = Config()
-    print mConfig.OurSysChartSet()
+    print(mConfig.OurSysChartSet())
     if bool(mConfig.IsWriteToFile()) == True:
-        print 1
+        print(1)

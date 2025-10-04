@@ -5,9 +5,8 @@ Created on 2016年1月21日
 @author: bush2582
 @email : bush2582@163.com
 '''
-from SolutionBase import Solution
+from .SolutionBase import Solution
 import random, math
-from Solution.SolutionBase import Solution
 from BSplineCurve_Package.BSplineCurve import BSplineCurve
 class Solution_Of_BSplineCurve7(Solution):
     '''
