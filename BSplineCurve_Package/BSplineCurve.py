@@ -372,7 +372,7 @@ class BSplineCurve():
     def __SearchIndex(self,u):
         Left = self.__mK
         Right = self.__m_n+self.__mK
-        Mid = (Left + Right)/2
+        Mid = (Left + Right)//2
  
         #print u, self.__mU_List[self.__m_n+self.__mK] 
        
@@ -384,7 +384,7 @@ class BSplineCurve():
                 Right = Mid 
             else :
                 Left = Mid
-            Mid = (Left + Right)/2 
+            Mid = (Left + Right)//2
            
         return Mid
 
