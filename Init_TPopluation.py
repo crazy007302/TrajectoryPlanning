@@ -55,5 +55,5 @@ class Init_TPopluation(object):
  
 if __name__ == '__main__':
     mLogistic_Map_T = Init_TPopluation(7,100)
-    print mLogistic_Map_T.T_Population()
+    print(mLogistic_Map_T.T_Population())
     
