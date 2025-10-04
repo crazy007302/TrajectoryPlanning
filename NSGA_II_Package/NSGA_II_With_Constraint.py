@@ -5,7 +5,7 @@ Created on 2016年1月20日
 @author: bush2582
 @email : bush2582@163.com
 '''
-from NSGA_II import NSGA_II
+from .NSGA_II import NSGA_II
 from Decorator_Package.Decorator_OtherDefine_NSGAII import Decorator_OtherDefine_NSGAII
 
 class NSGA_II_With_Constraint(NSGA_II):
